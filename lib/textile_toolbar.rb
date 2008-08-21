@@ -4,7 +4,7 @@ module TextileToolbar
     html << "&nbsp;"
     html << link_to_function(image_tag("textile_toolbar/italic.png", :size => "23x22", :alt => "Make selection italic"), "surround_selection('#{id}', '_')")
     html << "&nbsp;"
-    html << link_to("Textile", "http://hobix.com/textile/") << " enabled"
+    html << link_to("Textile", "http://hobix.com/textile/") << "&nbsp;enabled"
   end
 end
 
