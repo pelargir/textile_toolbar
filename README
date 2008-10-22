@@ -18,6 +18,10 @@ Or clone the project:
 
   git clone git://github.com/pelargir/textile_toolbar.git
 
+Then copy the required image and JS files into your Rails project
+
+  rake textile_toolbar:install_files
+
 == Resources
 
 Repository: http://github.com/pelargir/textile_toolbar/
