@@ -9,10 +9,9 @@ Install the gem directly:
   gem sources -a http://gems.github.com (you only have to do this once)
   sudo gem install pelargir-textile_toolbar
   
-Or install the gem in your Rails project:
+Or install the gem in your Rails project as a plugin:
   
-  gem sources -a http://gems.github.com
-  script/plugin install pelargir-textile_toolbar
+  script/plugin install git://github.com/pelargir/textile_toolbar.git
 
 Or clone the project:
 
