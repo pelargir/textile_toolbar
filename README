@@ -1,6 +1,14 @@
 = textile_toolbar
 
-Adds a handy Textile toolbar to any text area.
+Adds a handy Textile toolbar to any text area. The toolbar currently offers
+the following functions:
+
+  - Bold: select some text and click this button to make it bold.
+  - Italic: select some text and click this button to make it italic.
+  - Insert Hyperlink: select some text, click, enter URL, and link is inserted.
+  - Insert Image: click, enter image URL, and image is inserted at cursor.
+
+A link to a Textile reference page is also shown beside the toolbar.
 
 
 == Installation
@@ -42,15 +50,6 @@ Instead, you'll need to do this:
   <% form_for :article do |f| -%>
     <%= textile_area :article, :body %>
   <% end -%>
-
-The toolbar currently offers the following functions:
-
-  - Bold: select some text and click this button to make it bold.
-  - Italic: select some text and click this button to make it italic.
-  - Insert Hyperlink: select some text, click, enter a URL, and link is inserted.
-  - Insert Image: click, enter image URL, and image is inserted at cursor.
-
-A handy link to a Textile reference page is also shown beside the toolbar.
 
 
 == Resources
