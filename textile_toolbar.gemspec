@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/pelargir/textile_toolbar"
   s.description = "Adds a handy Textile toolbar to any text area."
   s.has_rdoc = true
-  s.authors  = ["Matthew Bass", "Terralien"]
+  s.authors  = ["Matthew Bass"]
   s.files    = [
     "CHANGELOG",
     "files/public/images/textile_toolbar/bold.png",
