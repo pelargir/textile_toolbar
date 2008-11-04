@@ -28,7 +28,7 @@ Or clone the project:
 
 Then copy the required image and JS files into your Rails project
 
-  rake textile_toolbar:install_files
+  rake textile_toolbar:install
 
 
 == Usage
