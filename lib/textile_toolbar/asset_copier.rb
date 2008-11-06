@@ -7,9 +7,10 @@ require 'digest/md5'
 module TextileToolbar
   class AssetCopier
     @source = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'files'))
+    @destination = RAILS_ROOT
     @deleted_files = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'deleted_files'))
     class << self
-      attr_accessor :source, :deleted_files
+      attr_accessor :source, :destination, :deleted_files
     end
   
     def self.copy(plugin_name)
@@ -18,15 +19,15 @@ module TextileToolbar
           if File.directory?(path)
             unless File.exists?(dest_path)
               FileUtils.mkdir_p(dest_path)
-              puts "Creating directory #{short_path} for #{plugin_name}"
+              log "Creating directory #{short_path} for #{plugin_name}"
             end
-          else
+          elsif !compare(path, dest_path)
             FileUtils.cp(path, dest_path)
-            puts "Copying #{short_path} from #{plugin_name}"
+            log "Copying #{short_path} from #{plugin_name}"
           end
         end
       rescue Exception => e
-        puts "Error trying to copy files: #{e.inspect}"
+        log "Error trying to copy files: #{e.inspect}"
         raise e
       end
       print_deletion_warnings(plugin_name)
@@ -38,14 +39,14 @@ module TextileToolbar
         reinstall = false
         if File.exists?(dest_path)
           unless compare(path, dest_path)
-            puts "WARNING: #{short_path} is out of date and needs to be reinstalled"
+            log "WARNING: #{short_path} is out of date and needs to be reinstalled"
             reinstall = true
           end
         else
           reinstall = true
-          puts "WARNING: #{short_path} is missing and needs to be installed"
+          log "WARNING: #{short_path} is missing and needs to be installed"
         end
-        puts "WARNING: Please run rake #{plugin_name}:install" if reinstall
+        log "WARNING: Please run rake #{plugin_name}:install" if reinstall
       end
       print_deletion_warnings(plugin_name)
     end
@@ -57,8 +58,8 @@ module TextileToolbar
     def self.print_deletion_warnings(plugin_name)
       File.open(deleted_files, "r") do |f|
         f.readlines.reject { |l| l =~ /^#/ || l.strip.blank? }.each do |l|
-          puts "WARNING: #{l} is no longer required by the #{plugin_name} plugin " <<
-            "and can can be safely removed" if File.exists?(l)
+          log "WARNING: #{l} is no longer required by the #{plugin_name} plugin " <<
+              "and can can be safely removed" if File.exists?(l)
         end
       end
     end
@@ -75,10 +76,14 @@ module TextileToolbar
   
     def self.each_path
       paths.each do |path|
-        dest_path = path.gsub(source, RAILS_ROOT)
-        short_path = dest_path.gsub("#{RAILS_ROOT}/", "")
+        dest_path = path.gsub(source, destination)
+        short_path = dest_path.gsub("#{destination}/", "")
         yield path, dest_path, short_path
       end
+    end
+    
+    def self.log(msg)
+      puts msg
     end
   end
 end
