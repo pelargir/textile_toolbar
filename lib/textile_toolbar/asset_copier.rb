@@ -52,7 +52,8 @@ module TextileToolbar
     end
   
     def self.compare(file1, file2)
-      Digest::MD5.hexdigest(File.read(file1)) == Digest::MD5.hexdigest(File.read(file2))
+      File.exists?(file1) && File.exists?(file2) &&
+        Digest::MD5.hexdigest(File.read(file1)) == Digest::MD5.hexdigest(File.read(file2))
     end
   
     def self.print_deletion_warnings(plugin_name)
