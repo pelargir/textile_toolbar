@@ -10,7 +10,6 @@ the following functions:
 
 A link to a Textile reference page is also shown beside the toolbar.
 
-
 == Installation
 
 Install the gem directly:
@@ -30,7 +29,6 @@ Then copy the required image and JS files into your Rails project
 
   rake textile_toolbar:install
 
-
 == Usage
 
 Use the textile_area helper where you would normally use the text_area
@@ -38,6 +36,11 @@ helper. Yep, it's that simple!
 
   <%= text_area :article, :body %>      # plain old text area
   <%= textile_area :article, :body %>   # text area with Textile toolbar
+
+Any options that can be passed to text_area can also be passed to textile_area.
+For example, to set the width and height:
+
+  <%= textile_area :article, :body, :rows => 5, :cols => 10 %>
 
 Form blocks are not yet supported, so you can't do this:
 
@@ -50,7 +53,6 @@ Instead, you'll need to do this:
   <% form_for :article do |f| -%>
     <%= textile_area :article, :body %>
   <% end -%>
-
 
 == Resources
 

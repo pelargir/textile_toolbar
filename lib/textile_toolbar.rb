@@ -2,7 +2,8 @@ module TextileToolbar
   def textile_area(object_name, method, options={})
     disable = options.delete(:disable) || {}
     toolbar = textile_toolbar(options[:id] || "#{object_name}_#{method}", disable)
-    toolbar + text_area(object_name, method, options)
+    "<div class=\"textile_toolbar\">#{toolbar}</div>" <<
+    "<div class=\"textile_area\">#{text_area(object_name, method, options)}</div>"
   end
   
   def textile_toolbar(id, disable)
