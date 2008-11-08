@@ -19,6 +19,13 @@ module TextileToolbar
     end
     html << "<small>" << link_to("Textile", "http://hobix.com/textile/", :target => "_blank") << "&nbsp;enabled</small>"
   end
+  
+  module FormBuilder
+    def textile_area(method, options={})
+      @template.textile_area(@object_name, method, options)
+    end
+  end
 end
 
 ActionView::Base.send :include, TextileToolbar
+ActionView::Helpers::FormBuilder.send :include, TextileToolbar::FormBuilder

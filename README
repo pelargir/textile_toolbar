@@ -37,22 +37,16 @@ helper. Yep, it's that simple!
   <%= text_area :article, :body %>      # plain old text area
   <%= textile_area :article, :body %>   # text area with Textile toolbar
 
-Any options that can be passed to text_area can also be passed to textile_area.
-For example, to set the width and height:
-
-  <%= textile_area :article, :body, :rows => 5, :cols => 10 %>
-
-Form blocks are not yet supported, so you can't do this:
+Form blocks are supported, letting you do this also:
 
   <% form_for :article do |f| -%>
     <%= f.textile_area :body %>
   <% end -%>
 
-Instead, you'll need to do this:
+Any options that can be passed to text_area can also be passed to textile_area.
+For example, to set the width and height:
 
-  <% form_for :article do |f| -%>
-    <%= textile_area :article, :body %>
-  <% end -%>
+  <%= textile_area :article, :body, :rows => 5, :cols => 10 %>
 
 == Resources
 
