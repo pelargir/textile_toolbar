@@ -1,2 +1,4 @@
 - Add specs for existing functionality
-- Enable textile_area to work inside a form block (e.g. f.textile_area)
+- Incorporate live preview? See http://jrm.cc/extras/live-textile-preview.php
+- More buttons (check PHP bulletin board)
+- Create Radiant extension for admin text areas
