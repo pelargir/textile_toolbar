@@ -58,7 +58,7 @@ module TextileToolbar
   
     def self.print_deletion_warnings(plugin_name)
       File.open(deleted_files, "r") do |f|
-        f.readlines.reject { |l| l =~ /^#/ || l.strip.blank? }.each do |l|
+        f.readlines.reject { |l| l =~ /^#/ || l.strip.nil? || l.strip.empty? }.each do |l|
           log "WARNING: #{l} is no longer required by the #{plugin_name} plugin " <<
               "and can can be safely removed" if File.exists?(l)
         end
