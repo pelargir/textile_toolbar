@@ -66,13 +66,13 @@ module TextileToolbar
     end
   
     def self.paths
-      returning [] do |paths|
-        Find.find(source) do |path|
-          Find.prune if path =~ /\/\..+/
-          Find.prune if path =~ /(CVS|.svn|.git)/
-          paths << path
-        end
+      paths = []
+      Find.find(source) do |path|
+        Find.prune if path =~ /\/\..+/
+        Find.prune if path =~ /(CVS|.svn|.git)/
+        paths << path
       end
+      paths
     end
   
     def self.each_path
