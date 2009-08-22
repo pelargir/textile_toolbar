@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.authors  = ["Matthew Bass"]
   s.files    = [
     "CHANGELOG",
+    "deleted_files",
     "files/public/images/textile_toolbar/bold.png",
     "files/public/images/textile_toolbar/hyperlink.png",
     "files/public/images/textile_toolbar/image.png",
@@ -21,7 +22,7 @@ Gem::Specification.new do |s|
     "MIT-LICENSE",
     "Rakefile",
 		"README",
-		"tasks/textile_toolbar.rake",
+		"tasks/asset_copier.rake",
 		"test/test_helper.rb",
 		"test/textile_toolbar_test.rb",
 		"textile_toolbar.gemspec",
