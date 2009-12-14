@@ -1,4 +1,4 @@
-10/22/08 - Automated asset copying into Rails project [Matthew Bass]
-           Updated documentation [Matthew Bass]
-
-8/21/08 - Initial version [Matthew Bass]
+12/14/09 - fixed gem support [MJB]
+12/14/09 - removed asset copying [MJB]
+10/22/08 - added automatic asset copying [MJB]
+08/21/08 - initial version [MJB]
