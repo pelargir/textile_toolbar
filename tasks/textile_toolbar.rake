@@ -1,3 +1,5 @@
+require 'rake'
+
 namespace :textile_toolbar do
   desc "Install files required by textile_toolbar"
   task :install do  
