@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README",
      "Rakefile",
      "TODO",
+     "VERSION",
      "files/public/images/textile_toolbar/bold.png",
      "files/public/images/textile_toolbar/hyperlink.png",
      "files/public/images/textile_toolbar/image.png",
@@ -31,6 +32,7 @@ Gem::Specification.new do |s|
      "files/public/javascripts/textile_toolbar.js",
      "init.rb",
      "lib/textile_toolbar.rb",
+     "tasks/textile_toolbar.rake",
      "test/test_helper.rb",
      "test/textile_toolbar_test.rb",
      "textile_toolbar.gemspec"
