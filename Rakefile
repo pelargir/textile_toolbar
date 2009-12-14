@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
@@ -20,3 +21,19 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "textile_toolbar"
+    gemspec.summary = "Adds a handy Textile toolbar to any text area."
+    gemspec.description = "Adds a handy Textile toolbar to any text area."
+    gemspec.email = "pelargir@gmail.com"
+    gemspec.homepage = "http://github.com/pelargir/textile_toolbar"
+    gemspec.authors = ["Matthew Bass"]
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+end
+
+Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| puts ext; load ext }

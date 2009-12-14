@@ -1,3 +1,5 @@
+load File.expand_path(File.dirname(__FILE__) + '/../tasks/textile_toolbar.rake')
+
 module TextileToolbar
   def textile_area(object_name, method, options={})
     disable = options.delete(:disable) || {}

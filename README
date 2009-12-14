@@ -14,15 +14,11 @@ A link to a Textile reference page is also shown beside the toolbar.
 
 Install the gem directly:
 
-  sudo gem install pelargir-textile_toolbar --source=http://gems.github.com
+  sudo gem install textile_toolbar
   
 Or install the gem in your Rails project as a plugin:
   
   script/plugin install git://github.com/pelargir/textile_toolbar.git
-
-Or clone the project:
-
-  git clone git://github.com/pelargir/textile_toolbar.git
 
 Then copy the required image and JS files into your Rails project
 
