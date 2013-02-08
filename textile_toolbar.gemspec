@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{textile_toolbar}
-  s.version = "0.5.2"
+  s.version = "0.5.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matthew Bass"]
-  s.date = %q{2009-12-14}
+  s.date = %q{2013-02-08}
   s.description = %q{Adds a handy Textile toolbar to any text area.}
   s.email = %q{pelargir@gmail.com}
   s.extra_rdoc_files = [
