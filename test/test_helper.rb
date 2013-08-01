@@ -1,7 +1,7 @@
 require 'rubygems'
-require 'test/unit'
+require 'minitest/autorun'
 require 'shoulda'
 require 'mocha'
 require 'action_controller'
 
-require File.expand_path(File.dirname(__FILE__) + '/../lib/textile_toolbar')
+require_relative '../lib/textile_toolbar'

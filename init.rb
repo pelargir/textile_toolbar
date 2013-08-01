@@ -1,1 +1,0 @@
-require 'textile_toolbar'

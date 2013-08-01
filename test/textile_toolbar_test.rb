@@ -1,6 +1,7 @@
-require File.expand_path(File.dirname(__FILE__) + '/test_helper')
+require_relative 'test_helper'
 
 class TextileToolbarTest < Test::Unit::TestCase
+
   include TextileToolbar
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::AssetTagHelper
@@ -14,5 +15,5 @@ class TextileToolbarTest < Test::Unit::TestCase
       assert textile_area(:article, :body).include?("</textarea>")
     end
   end
-end
 
+end
